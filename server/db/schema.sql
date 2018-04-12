@@ -12,7 +12,7 @@ CREATE TABLE users (
 
 CREATE TABLE listings (
   ID SERIAL PRIMARY KEY,
-  overall, DECIMAL,
+  overall DECIMAL,
   accuracy DECIMAL,
   communication DECIMAL,
   cleanliness DECIMAL,
@@ -22,13 +22,12 @@ CREATE TABLE listings (
 
 CREATE TABLE reviews (
   ID SERIAL PRIMARY KEY,
-  user_id VARCHAR,
+  user_id INT,
   listing_id INT,
   body TEXT,
   accuracy INT,
   location INT,
   cleanliness INT,
   communication INT,
-  value INT,
-  isFlagged INT
+  value INT
 );

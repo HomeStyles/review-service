@@ -1,4 +1,7 @@
 const express = require('express');
+const db = require('./db');
+
+
 // const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
@@ -21,4 +24,4 @@ app.listen(3000, () => {
   console.log('server running at: http://localhost:3000');
 });
 
-module.exports = app;
+module.exports.app = app;
