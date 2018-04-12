@@ -1,6 +1,5 @@
 const express = require('express');
-const db = require('./db');
-
+const db = require('./db/index');
 
 // const path = require('path');
 const logger = require('morgan');
@@ -16,9 +15,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/', (req, res) => res.status(200).send({
-  message: 'Welcome to the beginning of nothingness.',
-}));
+app.get('/', (req, res) =>  {
+  db.any('SELECT * FROM users WHERE id < $1', [10])
+    .then((data) => {
+      res.status(200).send({
+        message: data,
+      });
+    })
+    .catch((error) => {
+      res.status(200).send({
+        message: error,
+      });
+    });
+});
 
 app.listen(3000, () => {
   console.log('server running at: http://localhost:3000');
