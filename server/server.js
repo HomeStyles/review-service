@@ -1,7 +1,6 @@
 const express = require('express');
 const db = require('./db/index');
 
-
 // const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
