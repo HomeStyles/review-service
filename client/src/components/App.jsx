@@ -1,5 +1,8 @@
 
 import React from 'react';
+import Header from './Header';
+import Overview from './Overview';
+import Review from './Review';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,9 +12,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        <h2>It is a time.</h2>
+      <div className="reviewsHolder">
+        <Header />
+        <Overview />
+        <Review />
+
       </div>
     );
   }
