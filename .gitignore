@@ -39,3 +39,10 @@ node_modules
 .floobit
 .floo
 .flooignore
+
+
+#babel
+.babelrc
+
+#webpack
+bundle.js
