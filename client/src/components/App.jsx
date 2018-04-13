@@ -15,7 +15,7 @@ class App extends React.Component {
       <div className="reviewsHolder">
         <Header />
         <Overview />
-        {/* map <Review /> */}
+        <Review />
       </div>
     );
   }
