@@ -1,17 +1,17 @@
-/* eslint-disable */
+
 import React from 'react';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = {};
   }
 
   render() {
     return (
       <div>
         <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <h2>It is a time.</h2>
       </div>
     );
   }
