@@ -1,8 +1,8 @@
 
 import React from 'react';
-import Header from './Header.jsx';
-import Overview from './Overview.jsx';
-import Review from './Review.jsx';
+import Header from './Header';
+import Overview from './Overview';
+import Review from './Review';
 
 class App extends React.Component {
   constructor(props) {
