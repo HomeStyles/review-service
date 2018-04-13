@@ -1,5 +1,8 @@
 /* eslint-disable */
 import React from 'react';
+import Header from './Header.jsx';
+import Overview from './Overview.jsx';
+import Review from './Review.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,9 +12,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      <div className="reviewsHolder">
+        <Header />
+        <Overview />
+        {/* map <Review /> */}
       </div>
     );
   }
