@@ -27,7 +27,8 @@
     "pg": "^7.4.1",
     "pg-promise": "^8.2.3",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react-dom": "^16.3.1",
+    "react-star-ratings": "^2.2.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
