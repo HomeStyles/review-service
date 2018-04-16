@@ -45,7 +45,7 @@ for (let r = 0; r < 10000; r += 1) {
     getNum(3, 5),
     getNum(3, 5),
   ];
-  const avg = (review[0] + review[1] + review[2] + review[3] + review[4] + review[5]) / 6;
+  const avg = (review[3] + review[4] + review[5] +review[6] + review[7] + review[8]) / 6;
   review.push(avg);
   insertReview(review);
 }

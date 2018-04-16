@@ -31,5 +31,6 @@ CREATE TABLE reviews (
   cleanliness INT,
   location INT,
   checkin INT,
-  value INT
+  value INT,
+  overall INT
 );
