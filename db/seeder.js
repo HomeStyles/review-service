@@ -24,7 +24,7 @@ const insertListing = (inputArr) => {
 };
 
 const insertReview = (inputArr) => {
-  db.none('INSERT INTO reviews(user_id, listing_id, body, accuracy, communication, cleanliness, location, checkin, value) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)', inputArr)
+  db.none('INSERT INTO reviews(user_id, listing_id, body, accuracy, communication, cleanliness, location, checkin, value, overall) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', inputArr)
     .then(() => {
       console.log('inserted review');
     })
@@ -45,6 +45,8 @@ for (let r = 0; r < 10000; r += 1) {
     getNum(3, 5),
     getNum(3, 5),
   ];
+  const avg = (review[3] + review[4] + review[5] +review[6] + review[7] + review[8]) / 6;
+  review.push(avg);
   insertReview(review);
 }
 
@@ -58,7 +60,7 @@ for (let l = 0; l < 100; l += 1) {
     getNum(3, 5),
   ];
   const avg = (listing[0] + listing[1] + listing[2] + listing[3] + listing[4] + listing[5]) / 6;
-  listing.unshift(avg);
+  listing.push(avg);
   insertListing(listing);
 }
 
