@@ -7,7 +7,20 @@ import Review from './Review';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      listing: 1,
+    };
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:3000/listings/${this.state.listing}`)
+      .then(response => response.json())
+      .then((myJson) => {
+        this.setState({
+          reviews: myJson.reviews,
+          overview: myJson.overview,
+        });
+      });
   }
 
   render() {
@@ -16,7 +29,6 @@ class App extends React.Component {
         <Header />
         <Overview />
         <Review />
-
       </div>
     );
   }

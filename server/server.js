@@ -14,12 +14,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/users', (req, res) => {
-  db.any('SELECT * FROM users WHERE id < $1', [10])
+app.get('/listings/:tagId', (req, res) => {
+  const listingData = {};
+  db.any('SELECT reviews.body, reviews.communication, users.firstname FROM reviews JOIN users ON reviews.user_id = users.id WHERE reviews.listing_id = $1', [req.params.tagId])
     .then((data) => {
-      res.status(200).send({
-        message: data,
-      });
+      listingData.reviews = data;
+      return db.any('SELECT * from listings where id = $1', [req.params.tagId]);
+    })
+    .then((data) => {
+      listingData.overview = data;
+    })
+    .then(() => {
+      res.status(200).send(listingData);
     })
     .catch((error) => {
       res.status(200).send({
