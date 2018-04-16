@@ -32,5 +32,5 @@ CREATE TABLE reviews (
   location INT,
   checkin INT,
   value INT,
-  overall INT
+  overall DECIMAL
 );
