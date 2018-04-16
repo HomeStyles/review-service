@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="reviewsHolder">
-        <Header />
+        <Header reviews={[1, 2, 3]} rating={2.2} />
         <Overview />
         <Review />
 
