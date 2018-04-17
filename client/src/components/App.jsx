@@ -36,7 +36,6 @@ class App extends React.Component {
     fetch(`http://localhost:3000/listings/${id}`)
       .then(response => response.json())
       .then((myJson) => {
-        console.log(myJson.overview)
         this.setState({
           reviews: myJson.reviews,
           overview: myJson.overview[0],
@@ -46,7 +45,6 @@ class App extends React.Component {
   }
   
   render() {
-    console.log(this.state)
     return (
       <div className="reviewsHolder">
         <Header reviews={this.state.reviews.length} rating={this.state.overview.overall} />
