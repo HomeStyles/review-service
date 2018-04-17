@@ -22,7 +22,6 @@ class App extends React.Component {
         <Header reviews={[1, 2, 3]} rating={2.2} />
         <Overview />
         <Review review={this.state.review}/>
-
       </div>
     );
   }
