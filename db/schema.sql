@@ -12,13 +12,13 @@ CREATE TABLE users (
 
 CREATE TABLE listings (
   ID SERIAL PRIMARY KEY,
-  overall DECIMAL,
-  accuracy DECIMAL,
-  communication DECIMAL,
-  cleanliness DECIMAL,
-  location DECIMAL,
-  checkin DECIMAL,
-  value DECIMAL
+  overall FLOAT,
+  accuracy INT,
+  communication INT,
+  cleanliness INT,
+  location INT,
+  checkin INT,
+  value INT
 );
 
 CREATE TABLE reviews (
@@ -32,5 +32,5 @@ CREATE TABLE reviews (
   location INT,
   checkin INT,
   value INT,
-  overall DECIMAL
+  overall FLOAT
 );

@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/listings/:tagId', (req, res) => {
   const listingData = {};
-  db.any('SELECT reviews.body, reviews.communication, users.firstname FROM reviews JOIN users ON reviews.user_id = users.id WHERE reviews.listing_id = $1', [req.params.tagId])
+  db.any('SELECT DISTINCT reviews.body, reviews.overall, users.firstname, users.imageurl FROM reviews JOIN users ON reviews.user_id = users.id WHERE reviews.listing_id = $1', [req.params.tagId])
     .then((data) => {
       listingData.reviews = data;
       return db.any('SELECT * from listings where id = $1', [req.params.tagId]);
