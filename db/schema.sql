@@ -17,6 +17,7 @@ CREATE TABLE listings (
   communication DECIMAL,
   cleanliness DECIMAL,
   location DECIMAL,
+  checkin DECIMAL,
   value DECIMAL
 );
 
@@ -26,8 +27,10 @@ CREATE TABLE reviews (
   listing_id INT,
   body TEXT,
   accuracy INT,
-  location INT,
-  cleanliness INT,
   communication INT,
-  value INT
+  cleanliness INT,
+  location INT,
+  checkin INT,
+  value INT,
+  overall DECIMAL
 );
