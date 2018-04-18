@@ -14,7 +14,7 @@ const insertUser = (inputArr) => {
 const getNum = (min, max) => Math.floor(Math.random() * ((max - min) + 1)) + min;
 
 const insertListing = (inputArr) => {
-  db.none('INSERT INTO listings(overall, accuracy, communication, cleanliness, location, checkin, value) VALUES($1, $2, $3, $4, $5, $6, $7)', inputArr)
+  db.none('INSERT INTO listings(accuracy, communication, cleanliness, location, checkin, value, overall) VALUES($1, $2, $3, $4, $5, $6, $7)', inputArr)
     .then(() => {
       console.log('inserted listing');
     })
@@ -45,7 +45,7 @@ for (let r = 0; r < 10000; r += 1) {
     getNum(3, 5),
     getNum(3, 5),
   ];
-  const avg = (review[3] + review[4] + review[5] +review[6] + review[7] + review[8]) / 6;
+  const avg = ((review[3] + review[4] + review[5] +review[6] + review[7] + review[8]) / 6).toFixed(2);
   review.push(avg);
   insertReview(review);
 }
@@ -59,7 +59,7 @@ for (let l = 0; l < 100; l += 1) {
     getNum(3, 5),
     getNum(3, 5),
   ];
-  const avg = (listing[0] + listing[1] + listing[2] + listing[3] + listing[4] + listing[5]) / 6;
+  const avg = ((listing[0] + listing[1] + listing[2] + listing[3] + listing[4] + listing[5]) / 6).toFixed(2);;
   listing.push(avg);
   insertListing(listing);
 }

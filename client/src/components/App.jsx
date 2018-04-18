@@ -3,25 +3,53 @@ import React from 'react';
 import Header from './Header';
 import Overview from './Overview';
 import Review from './Review';
+import queryString from 'query-string';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      review: {
-        imageurl: "https://s3.amazonaws.com/uifaces/faces/twitter/_victa/128.jpg",
-        name: "Andrew",
-        body: "Suscipit nihil quisquam blanditiis. Laudantium inventore placeat ullam error illum maxime temporibus totam. Placeat rerum cumque. Error omnis velit laboriosam. Ex ex suscipit vel et fugit. Atque officia fugiat minus consequuntur blanditiis. Aut necessitatibus et perspiciatis dolore et perspiciatis quia quia dolores. Consequatur consequatur labore. Cum molestiae nam. Non qui eos ipsum laudantium tempore numquam debitis nam. Debitis ut ex quia autem cupiditate perferendis esse numquam accusantium.",
+      listing: 1,
+      reviews: [{
+        body: '',
+        overall: '',
+        firstname: '',
+        imageurl: ''
+      }],
+      overview: {
+        overall: 0,
       },
     };
   }
 
+  componentDidMount() {
+    const parsed = queryString.parse(location.search);
+    const currentId = Number(parsed.id);
+    if (currentId) {
+      this.renderListing(currentId);
+    } else {
+      this.renderListing(this.state.listing);
+    }
+  }
+
+  renderListing(id) {
+    fetch(`http://localhost:3000/listings/${id}`)
+      .then(response => response.json())
+      .then((myJson) => {
+        this.setState({
+          reviews: myJson.reviews,
+          overview: myJson.overview[0],
+          listing: id,
+        });
+      });
+  }
+  
   render() {
     return (
       <div className="reviewsHolder">
-        <Header reviews={[1, 2, 3]} rating={2.2} />
-        <Overview />
-        <Review review={this.state.review}/>
+        <Header reviews={this.state.reviews.length} rating={this.state.overview.overall} />
+        <Overview overview={this.state.overview} />
+        {this.state.reviews.map((review, key) => <Review key={key} review={review} />)}
       </div>
     );
   }
