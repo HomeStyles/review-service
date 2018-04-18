@@ -3,7 +3,7 @@ import StarRatings from 'react-star-ratings';
 
 const Header = props => (
   <div id="header">
-    <h1>{props.reviews} 
+    <h1>{props.reviews} Reviews
       <StarRatings
         rating={props.rating}
         starRatedColor='rgb(0,132,137)'

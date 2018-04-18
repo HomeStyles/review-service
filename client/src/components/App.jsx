@@ -6,8 +6,8 @@ import Review from './Review';
 import queryString from 'query-string';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       listing: 1,
       reviews: [{
