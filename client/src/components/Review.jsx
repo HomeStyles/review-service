@@ -6,7 +6,7 @@ const Review = props => (
       <img src={props.review.imageurl} alt="user" />
       <span>{props.review.firstname}</span>
     </div>
-    <p>{props.review.body}</p>
+    <p className="reviewBody">{props.review.body}</p>
   </div>
 );
 
