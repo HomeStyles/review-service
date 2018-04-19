@@ -1,0 +1,10 @@
+
+language: node_js
+node_js:
+  - "node"
+
+after_success:
+  - echo "Good job"
+
+after_failure:
+  - echo "Bad job"
