@@ -4,7 +4,7 @@
   "description": "> Project description",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "npm run build",
     "build": "webpack -p && webpack-dev-server"
   },
@@ -30,7 +30,8 @@
     "query-string": "^6.0.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-star-ratings": "^2.2.0"
+    "react-star-ratings": "^2.2.0",
+    "styled-components": "^3.2.6"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -60,6 +61,10 @@
     ],
     "moduleNameMapper": {
       "^.+\\.(css|scss)$": "identity-obj-proxy"
-    }
+    },
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ]
   }
 }
