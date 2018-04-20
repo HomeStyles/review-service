@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 const ReviewsHolder = styled.div`
   font-family: 'Montserrat', sans-serif;
+  letter-spacing: .2px;
 `;
 
 class App extends React.Component {

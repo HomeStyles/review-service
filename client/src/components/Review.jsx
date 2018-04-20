@@ -6,7 +6,7 @@ const Avatar = styled.img`
   height: 48px;
   width: 48px;
   margin-right: 15px;
-  float:left;
+  float: left;
 `;
 
 const Name = styled.p`

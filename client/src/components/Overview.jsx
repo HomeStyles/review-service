@@ -4,18 +4,17 @@ import styled from 'styled-components';
 
 const StarHolder = styled.div`
   margin-left: auto;
-  margin-right:0;
+  margin-right: 0;
   display: block
   text-align: right;
   margin-bottom: 12px;
 `;
 
 const Category = styled.span`
-  color: #484848 !important
+  color: #484848;
   float: left;
   font-size: 17px;
   line-height: 22px;
-  letter-spacing: .2px;
   margin-bottom: 12px;
 `;
 
