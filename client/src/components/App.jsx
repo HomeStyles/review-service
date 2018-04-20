@@ -4,6 +4,11 @@ import Header from './Header';
 import Overview from './Overview';
 import Review from './Review';
 import queryString from 'query-string';
+import styled from 'styled-components';
+
+const ReviewsHolder = styled.div`
+  font-family: 'Montserrat', sans-serif;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -11,16 +16,17 @@ class App extends React.Component {
     this.state = {
       listing: 1,
       reviews: [{
-        body: '',
-        overall: '',
-        firstname: '',
-        imageurl: ''
+        body: 'Ad error quia quos ipsa ut. Ab quisquam est nulla. Cumque optio ut voluptatem quibusdam. Fugit sequi quisquam tempore sint a est. Fugit amet adipisci. Earum quam ipsum numquam. Quo adipisci modi doloremque ex a. Doloribus aut odit. Voluptatem laborum id nobis voluptas eius quaerat unde ratione. Impedit quia accusamus fuga non accusantium ullam.',
+        overall: 4.2,
+        firstname: 'andrew',
+        imageurl: 'https://s3.amazonaws.com/uifaces/faces/twitter/jayphen/128.jpg'
       }],
       overview: {
-        overall: 0,
+        overall: 4.2,
       },
     };
   }
+
 
   componentDidMount() {
     const parsed = queryString.parse(location.search);
@@ -33,7 +39,7 @@ class App extends React.Component {
   }
 
   renderListing(id) {
-    fetch(`http://localhost:3000/listings/${id}`)
+    fetch(`http://localhost:8080/listings/${id}`)
       .then(response => response.json())
       .then((myJson) => {
         this.setState({
@@ -46,11 +52,13 @@ class App extends React.Component {
   
   render() {
     return (
-      <div className="reviewsHolder">
+      <ReviewsHolder className="reviewsHolder">
         <Header reviews={this.state.reviews.length} rating={this.state.overview.overall} />
+        <hr/>
         <Overview overview={this.state.overview} />
+        <hr/>
         {this.state.reviews.map((review, key) => <Review key={key} review={review} />)}
-      </div>
+      </ReviewsHolder>
     );
   }
 }
