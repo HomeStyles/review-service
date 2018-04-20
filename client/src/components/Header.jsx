@@ -38,7 +38,7 @@ const Header = props => (
         starSpacing="2px"
       />
     </StarsHolder>
-    <Searchbar type="text" placeholder="Search reviews"/>
+    <Searchbar onKeyPress={props.search} type="text" placeholder="Search reviews"/>
   </HeaderHolder>
 );
 
