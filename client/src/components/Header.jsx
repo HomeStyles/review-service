@@ -2,7 +2,7 @@ import React from 'react';
 import StarRatings from 'react-star-ratings';
 import styled from 'styled-components';
 
-const HeaderHolder = styled.div`
+const HeaderContainer = styled.div`
   width: 100%;
 `;
 
@@ -22,24 +22,24 @@ const Searchbar = styled.input`
   box-sizing: border-box
 `;
 
-const StarsHolder = styled.div`
+const StarsContainer = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
 `;
 
 const Header = props => (
-  <HeaderHolder>
+  <HeaderContainer>
     <Text>{props.reviews} Reviews</Text>
-    <StarsHolder>
+    <StarsContainer>
       <StarRatings
         rating={props.rating}
         starRatedColor='rgb(0,132,137)'
         starDimension="20px"
         starSpacing="2px"
       />
-    </StarsHolder>
-    <Searchbar type="text" placeholder="Search reviews"/>
-  </HeaderHolder>
+    </StarsContainer>
+    <Searchbar onKeyPress={props.search} type="text" placeholder="Search reviews"/>
+  </HeaderContainer>
 );
 
 export default Header;
