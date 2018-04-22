@@ -65,6 +65,12 @@
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**"
+    ],
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "!node_modules/react-runtime"
     ]
   }
 }
