@@ -9,6 +9,8 @@ import styled from 'styled-components';
 const ReviewsContainer = styled.div`
   font-family: 'Montserrat', sans-serif;
   letter-spacing: .2px;
+  width: 641.56px !important;
+  margin: auto;
 `;
 
 class App extends React.Component {
