@@ -3,12 +3,13 @@ const db = require('../db/index');
 const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 
 // logs requests to the console
 app.use(logger('dev'));
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
