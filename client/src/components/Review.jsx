@@ -30,6 +30,7 @@ const Review = props => (
       <Date>April 2018</Date>
     </div>
     <p className="reviewBody">{props.review.body}</p>
+    <hr/>
   </div>
 );
 
