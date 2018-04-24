@@ -10,7 +10,7 @@ const ReviewsContainer = styled.div`
   font-family: 'Montserrat', sans-serif;
   letter-spacing: .2px;
   width: 641.56px !important;
-  margin: auto;
+  padding: 8px;
 `;
 
 class App extends React.Component {
