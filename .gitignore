@@ -40,10 +40,6 @@ node_modules
 .floo
 .flooignore
 
-
-#babel
-.babelrc
-
 #webpack
 bundle.js
 
