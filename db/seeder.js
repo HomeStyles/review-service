@@ -33,7 +33,7 @@ const insertReview = (inputArr) => {
     });
 };
 
-for (let r = 0; r < 10000; r += 1) {
+for (let r = 0; r < 2000; r += 1) {
   const review = [
     getNum(1, 100),
     getNum(1, 100),
