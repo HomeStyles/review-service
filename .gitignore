@@ -43,5 +43,8 @@ node_modules
 #webpack
 bundle.js
 
+#aws
+aws-credentials.json
+
 #jest
 coverage
