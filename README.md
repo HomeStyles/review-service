@@ -5,9 +5,9 @@
 ## Related Projects
 
   - https://github.com/LakeShack/service-kent
+  - https://github.com/LakeShack/amenities-service
+  - https://github.com/LakeShack/pictures-service
   - https://github.com/LakeShack/reservation-service
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
 
 ## Table of Contents
 
